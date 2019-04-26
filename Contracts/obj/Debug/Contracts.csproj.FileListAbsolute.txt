@@ -1,0 +1,6 @@
+C:\Users\AP\source\repos\EBay.Services\Contracts\obj\Debug\Contracts.csproj.CoreCompileInputs.cache
+C:\Users\AP\source\repos\EBay.Services\Contracts\bin\Debug\Contracts.dll
+C:\Users\AP\source\repos\EBay.Services\Contracts\bin\Debug\Contracts.pdb
+C:\Users\AP\source\repos\EBay.Services\Contracts\obj\Debug\Contracts.dll
+C:\Users\AP\source\repos\EBay.Services\Contracts\obj\Debug\Contracts.pdb
+C:\Users\AP\source\repos\EBay.Services\Contracts\obj\Debug\Contracts.csprojAssemblyReference.cache

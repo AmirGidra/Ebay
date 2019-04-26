@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="APLabDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="APLabDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Items" EntityType="APLabDBModel.Item" />
+    <EntitySet Name="ItemOrders" EntityType="APLabDBModel.ItemOrder" />
+    <EntitySet Name="ShopTransactions" EntityType="APLabDBModel.ShopTransaction" />
+    <EntitySet Name="ShopUsers" EntityType="APLabDBModel.ShopUser" />
+    <EntitySet Name="SoldItems" EntityType="APLabDBModel.SoldItem" />
+    <EntitySet Name="UserRoles" EntityType="APLabDBModel.UserRole" />
+    <EntitySet Name="Users" EntityType="APLabDBModel.User" />
+    <AssociationSet Name="FK__ItemOrder__SoldI__6E01572D" Association="APLabDBModel.FK__ItemOrder__SoldI__6E01572D">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="ItemOrder" EntitySet="ItemOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SoldItem__ItemID__6B24EA82" Association="APLabDBModel.FK__SoldItem__ItemID__6B24EA82">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="SoldItem" EntitySet="SoldItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ItemOrder__UserI__6EF57B66" Association="APLabDBModel.FK__ItemOrder__UserI__6EF57B66">
+      <End Role="User" EntitySet="Users" />
+      <End Role="ItemOrder" EntitySet="ItemOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SoldItem__Transa__6D0D32F4" Association="APLabDBModel.FK__SoldItem__Transa__6D0D32F4">
+      <End Role="ShopTransaction" EntitySet="ShopTransactions" />
+      <End Role="SoldItem" EntitySet="SoldItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ShopUser__RoleId__6477ECF3" Association="APLabDBModel.FK__ShopUser__RoleId__6477ECF3">
+      <End Role="UserRole" EntitySet="UserRoles" />
+      <End Role="ShopUser" EntitySet="ShopUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SoldItem__UserId__6C190EBB" Association="APLabDBModel.FK__SoldItem__UserId__6C190EBB">
+      <End Role="ShopUser" EntitySet="ShopUsers" />
+      <End Role="SoldItem" EntitySet="SoldItems" />
+    </AssociationSet>
+    <EntitySet Name="Category1" EntityType="APLabDBModel.Category1" />
+    <EntitySet Name="sysdiagrams" EntityType="APLabDBModel.sysdiagram" />
+  </EntityContainer>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ItemDetails" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ItemPrice" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="ItemImgUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="PublishedBy" Type="Int32" Nullable="false" />
+    <Property Name="TotalNumber" Type="Int32" Nullable="false" />
+    <Property Name="Shipping" Type="Int32" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="DateModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ItemOrders" Relationship="APLabDBModel.FK__ItemOrder__SoldI__6E01572D" FromRole="Item" ToRole="ItemOrder" />
+    <NavigationProperty Name="SoldItems" Relationship="APLabDBModel.FK__SoldItem__ItemID__6B24EA82" FromRole="Item" ToRole="SoldItem" />
+  </EntityType>
+  <EntityType Name="ItemOrder">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SoldItemID" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Visible" Type="Boolean" Nullable="false" />
+    <Property Name="TransactionId" Type="Int32" />
+    <NavigationProperty Name="Item" Relationship="APLabDBModel.FK__ItemOrder__SoldI__6E01572D" FromRole="ItemOrder" ToRole="Item" />
+    <NavigationProperty Name="User" Relationship="APLabDBModel.FK__ItemOrder__UserI__6EF57B66" FromRole="ItemOrder" ToRole="User" />
+  </EntityType>
+  <EntityType Name="ShopTransaction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TotalPrice" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <NavigationProperty Name="SoldItems" Relationship="APLabDBModel.FK__SoldItem__Transa__6D0D32F4" FromRole="ShopTransaction" ToRole="SoldItem" />
+  </EntityType>
+  <EntityType Name="ShopUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="UserPsw" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="UserRole" Relationship="APLabDBModel.FK__ShopUser__RoleId__6477ECF3" FromRole="ShopUser" ToRole="UserRole" />
+    <NavigationProperty Name="SoldItems" Relationship="APLabDBModel.FK__SoldItem__UserId__6C190EBB" FromRole="ShopUser" ToRole="SoldItem" />
+  </EntityType>
+  <EntityType Name="SoldItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemID" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Visible" Type="Boolean" Nullable="false" />
+    <Property Name="TransactionId" Type="Int32" />
+    <NavigationProperty Name="Item" Relationship="APLabDBModel.FK__SoldItem__ItemID__6B24EA82" FromRole="SoldItem" ToRole="Item" />
+    <NavigationProperty Name="ShopTransaction" Relationship="APLabDBModel.FK__SoldItem__Transa__6D0D32F4" FromRole="SoldItem" ToRole="ShopTransaction" />
+    <NavigationProperty Name="ShopUser" Relationship="APLabDBModel.FK__SoldItem__UserId__6C190EBB" FromRole="SoldItem" ToRole="ShopUser" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleTitle" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ShopUsers" Relationship="APLabDBModel.FK__ShopUser__RoleId__6477ECF3" FromRole="UserRole" ToRole="ShopUser" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="UserPsw" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ItemOrders" Relationship="APLabDBModel.FK__ItemOrder__UserI__6EF57B66" FromRole="User" ToRole="ItemOrder" />
+  </EntityType>
+  <Association Name="FK__ItemOrder__SoldI__6E01572D">
+    <End Type="APLabDBModel.Item" Role="Item" Multiplicity="1" />
+    <End Type="APLabDBModel.ItemOrder" Role="ItemOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ItemOrder">
+        <PropertyRef Name="SoldItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SoldItem__ItemID__6B24EA82">
+    <End Type="APLabDBModel.Item" Role="Item" Multiplicity="1" />
+    <End Type="APLabDBModel.SoldItem" Role="SoldItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SoldItem">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ItemOrder__UserI__6EF57B66">
+    <End Type="APLabDBModel.User" Role="User" Multiplicity="1" />
+    <End Type="APLabDBModel.ItemOrder" Role="ItemOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemOrder">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SoldItem__Transa__6D0D32F4">
+    <End Type="APLabDBModel.ShopTransaction" Role="ShopTransaction" Multiplicity="0..1" />
+    <End Type="APLabDBModel.SoldItem" Role="SoldItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShopTransaction">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SoldItem">
+        <PropertyRef Name="TransactionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ShopUser__RoleId__6477ECF3">
+    <End Type="APLabDBModel.UserRole" Role="UserRole" Multiplicity="1" />
+    <End Type="APLabDBModel.ShopUser" Role="ShopUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="ShopUser">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SoldItem__UserId__6C190EBB">
+    <End Type="APLabDBModel.ShopUser" Role="ShopUser" Multiplicity="1" />
+    <End Type="APLabDBModel.SoldItem" Role="SoldItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShopUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SoldItem">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Category1">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="ParentId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,11 @@
+C:\Users\AP\source\repos\EBay.Services\Entitiy\bin\Debug\netcoreapp2.1\Entitiy.deps.json
+C:\Users\AP\source\repos\EBay.Services\Entitiy\bin\Debug\netcoreapp2.1\Entitiy.runtimeconfig.json
+C:\Users\AP\source\repos\EBay.Services\Entitiy\bin\Debug\netcoreapp2.1\Entitiy.runtimeconfig.dev.json
+C:\Users\AP\source\repos\EBay.Services\Entitiy\bin\Debug\netcoreapp2.1\Entitiy.dll
+C:\Users\AP\source\repos\EBay.Services\Entitiy\obj\Debug\netcoreapp2.1\Entitiy.csprojAssemblyReference.cache
+C:\Users\AP\source\repos\EBay.Services\Entitiy\obj\Debug\netcoreapp2.1\Entitiy.csproj.CoreCompileInputs.cache
+C:\Users\AP\source\repos\EBay.Services\Entitiy\obj\Debug\netcoreapp2.1\Entitiy.RazorAssemblyInfo.cache
+C:\Users\AP\source\repos\EBay.Services\Entitiy\obj\Debug\netcoreapp2.1\Entitiy.RazorAssemblyInfo.cs
+C:\Users\AP\source\repos\EBay.Services\Entitiy\obj\Debug\netcoreapp2.1\Entitiy.AssemblyInfoInputs.cache
+C:\Users\AP\source\repos\EBay.Services\Entitiy\obj\Debug\netcoreapp2.1\Entitiy.AssemblyInfo.cs
+C:\Users\AP\source\repos\EBay.Services\Entitiy\obj\Debug\netcoreapp2.1\Entitiy.RazorTargetAssemblyInfo.cache

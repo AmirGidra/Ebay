@@ -1,0 +1,13 @@
+.container{
+  color:#fff;
+  background-color: grey;
+}
+.product{
+  border: 1px solid grey;
+  padding: 3px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #000;
+}
+
+

@@ -1,0 +1,9 @@
+C:\Users\AP\source\repos\EBay.Services\Ebay.BLL\obj\Debug\Ebay.BLL.csprojAssemblyReference.cache
+C:\Users\AP\source\repos\EBay.Services\Ebay.BLL\obj\Debug\Ebay.BLL.csproj.CoreCompileInputs.cache
+C:\Users\AP\source\repos\EBay.Services\Ebay.BLL\bin\Debug\Ebay.BLL.dll
+C:\Users\AP\source\repos\EBay.Services\Ebay.BLL\bin\Debug\Ebay.BLL.pdb
+C:\Users\AP\source\repos\EBay.Services\Ebay.BLL\bin\Debug\Ebay.Common.dll
+C:\Users\AP\source\repos\EBay.Services\Ebay.BLL\bin\Debug\Ebay.Common.pdb
+C:\Users\AP\source\repos\EBay.Services\Ebay.BLL\obj\Debug\Ebay.BLL.csproj.CopyComplete
+C:\Users\AP\source\repos\EBay.Services\Ebay.BLL\obj\Debug\Ebay.BLL.dll
+C:\Users\AP\source\repos\EBay.Services\Ebay.BLL\obj\Debug\Ebay.BLL.pdb

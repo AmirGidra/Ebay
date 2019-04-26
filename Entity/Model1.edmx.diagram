@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4a506e77d29f4dc6b4583f75cca2c25f" Name="Diagram1">
+        <EntityTypeShape EntityType="APLabDBModel.Category" Width="1.5" PointX="2.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="APLabDBModel.Country" Width="1.5" PointX="11.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="APLabDBModel.FilterConfiguration" Width="1.5" PointX="10.125" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="APLabDBModel.FilterProduct" Width="1.5" PointX="7.625" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="APLabDBModel.OrderProduct" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="APLabDBModel.Product" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="APLabDBModel.SellerProduct" Width="1.5" PointX="9.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="APLabDBModel.Transaction" Width="1.5" PointX="3" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="APLabDBModel.UserDetail" Width="1.5" PointX="0.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="APLabDBModel.UserRole" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="APLabDBModel.UserTable" Width="1.5" PointX="1" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="APLabDBModel.FK__Product__Categor__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="APLabDBModel.FK__SellerPro__Count__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="APLabDBModel.FK__FilterPro__Filte__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="APLabDBModel.FK__FilterPro__Produ__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="APLabDBModel.FK__OrderProd__Buyer__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="APLabDBModel.FK__OrderProd__Selle__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="APLabDBModel.FK__OrderProd__Trans__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="APLabDBModel.FK__SellerPro__Produ__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="APLabDBModel.FK__SellerPro__Selle__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="APLabDBModel.FK__UserDetai__UserI__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="APLabDBModel.FK__UserTable__RoleI__286302EC" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="APLabDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+    <Property Name="ParentCategory" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="FilterConfiguration">
+    <Key>
+      <PropertyRef Name="FilterCategoryId" />
+    </Key>
+    <Property Name="FilterCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="30" />
+    <Property Name="FilterValue" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="FilterProduct">
+    <Key>
+      <PropertyRef Name="FilterProductId" />
+    </Key>
+    <Property Name="FilterProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="FilterCategoryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderProduct">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SellerProductId" Type="int" Nullable="false" />
+    <Property Name="BuyerId" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="IsVisible" Type="bit" />
+    <Property Name="TransactionId" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductTitle" Type="varchar" MaxLength="50" />
+    <Property Name="ProductDescription" Type="varchar" MaxLength="500" />
+    <Property Name="ImagePath" Type="varchar" MaxLength="500" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="SellerProduct">
+    <Key>
+      <PropertyRef Name="SellerProductId" />
+    </Key>
+    <Property Name="SellerProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductPrice" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="ShippingPrice" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="CountryId" Type="int" Nullable="false" />
+    <Property Name="SellerId" Type="int" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="TotalNumber" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Name="TransactionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TotalPrice" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="TransactionDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserDetail">
+    <Key>
+      <PropertyRef Name="UserDetailId" />
+    </Key>
+    <Property Name="UserDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="CreditCard" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="UserTable">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+    <Property Name="UserPassword" Type="varchar" MaxLength="20" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__FilterPro__Filte__412EB0B6">
+    <End Role="FilterConfiguration" Type="Self.FilterConfiguration" Multiplicity="1" />
+    <End Role="FilterProduct" Type="Self.FilterProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FilterConfiguration">
+        <PropertyRef Name="FilterCategoryId" />
+      </Principal>
+      <Dependent Role="FilterProduct">
+        <PropertyRef Name="FilterCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FilterPro__Produ__403A8C7D">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="FilterProduct" Type="Self.FilterProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="FilterProduct">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderProd__Buyer__3A81B327">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="OrderProduct" Type="Self.OrderProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="OrderProduct">
+        <PropertyRef Name="BuyerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderProd__Selle__398D8EEE">
+    <End Role="SellerProduct" Type="Self.SellerProduct" Multiplicity="1" />
+    <End Role="OrderProduct" Type="Self.OrderProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SellerProduct">
+        <PropertyRef Name="SellerProductId" />
+      </Principal>
+      <Dependent Role="OrderProduct">
+        <PropertyRef Name="SellerProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderProd__Trans__3B75D760">
+    <End Role="Transactions" Type="Self.Transactions" Multiplicity="1" />
+    <End Role="OrderProduct" Type="Self.OrderProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transactions">
+        <PropertyRef Name="TransactionId" />
+      </Principal>
+      <Dependent Role="OrderProduct">
+        <PropertyRef Name="TransactionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__Categor__2F10007B">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SellerPro__Count__32E0915F">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="SellerProduct" Type="Self.SellerProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="SellerProduct">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SellerPro__Produ__33D4B598">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="SellerProduct" Type="Self.SellerProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="SellerProduct">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SellerPro__Selle__31EC6D26">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="SellerProduct" Type="Self.SellerProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SellerProduct">
+        <PropertyRef Name="SellerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserDetai__UserI__276EDEB3">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="UserDetail" Type="Self.UserDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserDetail">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserTable__RoleI__286302EC">
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="1" />
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="UserTable">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="APLabDBModelStoreContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterConfiguration" EntityType="Self.FilterConfiguration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterProduct" EntityType="Self.FilterProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderProduct" EntityType="Self.OrderProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SellerProduct" EntityType="Self.SellerProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserDetail" EntityType="Self.UserDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserTable" EntityType="Self.UserTable" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__FilterPro__Filte__412EB0B6" Association="Self.FK__FilterPro__Filte__412EB0B6">
+      <End Role="FilterConfiguration" EntitySet="FilterConfiguration" />
+      <End Role="FilterProduct" EntitySet="FilterProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FilterPro__Produ__403A8C7D" Association="Self.FK__FilterPro__Produ__403A8C7D">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="FilterProduct" EntitySet="FilterProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderProd__Buyer__3A81B327" Association="Self.FK__OrderProd__Buyer__3A81B327">
+      <End Role="UserTable" EntitySet="UserTable" />
+      <End Role="OrderProduct" EntitySet="OrderProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderProd__Selle__398D8EEE" Association="Self.FK__OrderProd__Selle__398D8EEE">
+      <End Role="SellerProduct" EntitySet="SellerProduct" />
+      <End Role="OrderProduct" EntitySet="OrderProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderProd__Trans__3B75D760" Association="Self.FK__OrderProd__Trans__3B75D760">
+      <End Role="Transactions" EntitySet="Transactions" />
+      <End Role="OrderProduct" EntitySet="OrderProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__Categor__2F10007B" Association="Self.FK__Product__Categor__2F10007B">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SellerPro__Count__32E0915F" Association="Self.FK__SellerPro__Count__32E0915F">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="SellerProduct" EntitySet="SellerProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SellerPro__Produ__33D4B598" Association="Self.FK__SellerPro__Produ__33D4B598">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="SellerProduct" EntitySet="SellerProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SellerPro__Selle__31EC6D26" Association="Self.FK__SellerPro__Selle__31EC6D26">
+      <End Role="UserTable" EntitySet="UserTable" />
+      <End Role="SellerProduct" EntitySet="SellerProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserDetai__UserI__276EDEB3" Association="Self.FK__UserDetai__UserI__276EDEB3">
+      <End Role="UserTable" EntitySet="UserTable" />
+      <End Role="UserDetail" EntitySet="UserDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserTable__RoleI__286302EC" Association="Self.FK__UserTable__RoleI__286302EC">
+      <End Role="UserRole" EntitySet="UserRole" />
+      <End Role="UserTable" EntitySet="UserTable" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

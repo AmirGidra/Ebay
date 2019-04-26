@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b1bc5f737c4d46a9b1a478a4f0d63bc3" Name="Diagram1">
+        <EntityTypeShape EntityType="APLabDBModel.MSreplication_options" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="APLabDBModel.spt_fallback_db" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="APLabDBModel.spt_fallback_dev" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="APLabDBModel.spt_fallback_usg" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="APLabDBModel.spt_monitor" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="APLabDBModel.Category" Width="1.5" PointX="5.75" PointY="9.75" />
+        <EntityTypeShape EntityType="APLabDBModel.Item" Width="1.5" PointX="8" PointY="8.5" />
+        <EntityTypeShape EntityType="APLabDBModel.ItemOrder" Width="1.5" PointX="10.25" PointY="9.375" />
+        <EntityTypeShape EntityType="APLabDBModel.ShopTransaction" Width="1.5" PointX="8" PointY="2.125" />
+        <EntityTypeShape EntityType="APLabDBModel.ShopUser" Width="1.5" PointX="8" PointY="5.375" />
+        <EntityTypeShape EntityType="APLabDBModel.SoldItem" Width="1.5" PointX="10.25" PointY="5" />
+        <EntityTypeShape EntityType="APLabDBModel.sysdiagram" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="APLabDBModel.UserRole" Width="1.5" PointX="5.75" PointY="5.625" />
+        <EntityTypeShape EntityType="APLabDBModel.User" Width="1.5" PointX="8" PointY="13.75" />
+        <AssociationConnector Association="APLabDBModel.FK__Item__CategoryId__18EBB532" />
+        <AssociationConnector Association="APLabDBModel.FK__ItemOrder__SoldI__6E01572D" />
+        <AssociationConnector Association="APLabDBModel.FK__SoldItem__ItemID__6B24EA82" />
+        <AssociationConnector Association="APLabDBModel.FK__ItemOrder__UserI__6EF57B66" />
+        <AssociationConnector Association="APLabDBModel.FK__SoldItem__Transa__6D0D32F4" />
+        <AssociationConnector Association="APLabDBModel.FK__ShopUser__RoleId__6477ECF3" />
+        <AssociationConnector Association="APLabDBModel.FK__SoldItem__UserId__6C190EBB" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

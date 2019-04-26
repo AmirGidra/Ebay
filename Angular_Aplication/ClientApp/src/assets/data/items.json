@@ -1,0 +1,75 @@
+[
+	{
+    "id": 0,
+		"title": "Nokia Lumiya 1020",
+		"price": 499.99,
+		"img": "https://drop.ndtv.com/TECH/product_database/images/712201315240PM_635_Nokia-Lumia-1020-db.png",
+    "category": 4,
+    "condition":1,
+    "freeShipping": true
+	},
+	{
+    "id": 1,
+		"title": "Nokia Lumiya 910",
+		"price": 950,
+		"img": "https://www.themobileindian.com/resizer.php?src=http://image.themobileindian.com/images/nnews/2012/01/5015/5015_2.jpg&w=735&h=425",
+    "category": 4,
+    "condition":2,
+    "freeShipping":  false
+},
+  {
+    "id": 2,
+		"title": "Party Queen",
+		"price": 30,
+		"img": "https://ae01.alicdn.com/kf/HTB1YjkJNXXXXXcnXXXXq6xXFXXXe/Brand-new-party-queen-makeup-lipstick-gorgeous-expensive-lipstick-lasting-brand-fashion-colors-neon-colored-lipstick.jpg",
+    "category": 1,
+    "condition":1,
+    "freeShipping":  false
+},
+  {
+    "id": 3,
+		"title": "Tom Ford Bronzer",
+		"price": 100,
+		"img": "https://1.bp.blogspot.com/-9bF2VW1AurI/Wmj5dahzzwI/AAAAAAAAF50/v4zIJecnpUMOHNf2btRvZBdG-lW9KFWeACLcBGAs/s640/Tom%2BFord%2BBronzer%2BReview%2B%25282%2529.JPG",
+    "category": 1,
+    "condition":1,
+    "freeShipping":  false
+},
+  {
+    "id": 4,
+		"title": "Fossil Man",
+		"price": 347,
+		"img": "https://cdn2.jomashop.com/media/catalog/product/f/o/fossil-grant-chronograph-automatic-men_s-watch-me1162.jpg",
+    "category": 2,
+    "condition":2,
+    "freeShipping": true
+},
+  {
+    "id": 5,
+		"title": "Olevs",
+		"price": 440,
+		"img": "https://adealofdeals.com/wp-content/uploads/2018/10/9753-bmu8s2.jpg",
+    "category": 2,
+    "condition":1,
+    "freeShipping": false
+},
+  {
+    "id": 6,
+		"title": "Baby socks",
+		"price": 3,
+		"img": "https://i.ebayimg.com/images/i/323501731233-0-1/s-l1000.jpg",
+    "category": 3,
+    "condition":2,
+    "freeShipping": true
+},
+  {
+    "id": 7,
+		"title": "Baby Toddler Hat",
+		"price": 2.5,
+		"img": "https://i.ebayimg.com/images/i/191975136870-0-1/s-l1000.jpg",
+    "category": 3,
+    "condition":1,
+    "freeShipping": false
+}
+
+]

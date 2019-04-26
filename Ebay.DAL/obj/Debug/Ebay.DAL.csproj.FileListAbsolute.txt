@@ -1,0 +1,17 @@
+C:\Users\AP\source\repos\EBay.Services\Ebay.DAL\bin\Debug\Ebay.DAL.dll
+C:\Users\AP\source\repos\EBay.Services\Ebay.DAL\bin\Debug\Ebay.DAL.pdb
+C:\Users\AP\source\repos\EBay.Services\Ebay.DAL\obj\Debug\Ebay.DAL.csprojAssemblyReference.cache
+C:\Users\AP\source\repos\EBay.Services\Ebay.DAL\obj\Debug\Ebay.DAL.csproj.CoreCompileInputs.cache
+C:\Users\AP\source\repos\EBay.Services\Ebay.DAL\obj\Debug\Ebay.DAL.dll
+C:\Users\AP\source\repos\EBay.Services\Ebay.DAL\obj\Debug\Ebay.DAL.pdb
+C:\Users\AP\source\repos\EBay.Services\Ebay.DAL\bin\Debug\Ebay.DAL.dll.config
+C:\Users\AP\source\repos\EBay.Services\Ebay.DAL\bin\Debug\EntityFramework.dll
+C:\Users\AP\source\repos\EBay.Services\Ebay.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\AP\source\repos\EBay.Services\Ebay.DAL\bin\Debug\EntityFramework.xml
+C:\Users\AP\source\repos\EBay.Services\Ebay.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\AP\source\repos\EBay.Services\Ebay.DAL\obj\Debug\Ebay.DAL.csproj.CopyComplete
+C:\Users\AP\source\repos\EBay.Services\Ebay.DAL\bin\Debug\Contracts.dll
+C:\Users\AP\source\repos\EBay.Services\Ebay.DAL\bin\Debug\Contracts.pdb
+C:\Users\AP\source\repos\EBay.Services\Ebay.DAL\bin\Debug\Entity.dll
+C:\Users\AP\source\repos\EBay.Services\Ebay.DAL\bin\Debug\Entity.pdb
+C:\Users\AP\source\repos\EBay.Services\Ebay.DAL\bin\Debug\Entity.dll.config
